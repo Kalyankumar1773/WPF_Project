@@ -11,7 +11,7 @@ namespace xCubeApplication.Models
     public class UserDetails
     {
         [Key]
-        public int ID { get; set; }
+        public string ID { get; set; }
 
         [Required]
         [StringLength(100)]

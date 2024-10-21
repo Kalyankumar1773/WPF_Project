@@ -14,10 +14,17 @@ namespace xCubeApplication.Services
     public class UserRepositoryService :IUserRepositoryService
     {
         private readonly ApplicationDbContext _context;
-
+        public UserRepositoryService()
+        {
+            
+        }
         public UserRepositoryService(ApplicationDbContext context)
         {
             _context = context;
+        }
+        public async Task<UserDetails> GetUserByNameAsync(string Name)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Name == Name);
         }
 
         // Get all users

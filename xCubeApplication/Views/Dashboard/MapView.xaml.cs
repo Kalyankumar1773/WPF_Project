@@ -1,23 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace xCubeApplication.Views.Dashboard
 {
-    /// <summary>
-    /// Interaction logic for MapView.xaml
-    /// </summary>
     public partial class MapView : UserControl
     {
         private Point _startPoint;
@@ -59,30 +47,28 @@ namespace xCubeApplication.Views.Dashboard
 
         private void Image_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            var scaleTransform = ((Image)sender).RenderTransform as ScaleTransform;
-            if (scaleTransform != null)
-            {
-                // Determine the new zoom scale
-                double newScale = e.Delta > 0
-                    ? scaleTransform.ScaleX + 0.1
-                    : scaleTransform.ScaleX - 0.1;
+            var scaleTransform = (ScaleTransform)((Image)sender).RenderTransform;
 
-                // Clamp the zoom level between the min and max limits
-                newScale = Math.Max(_minZoom, Math.Min(_maxZoom, newScale));
+            // Determine the new zoom scale
+            double newScale = e.Delta > 0
+                ? scaleTransform.ScaleX + 0.1
+                : scaleTransform.ScaleX - 0.1;
 
-                // Apply the new scale to both ScaleX and ScaleY
-                scaleTransform.ScaleX = newScale;
-                scaleTransform.ScaleY = newScale;
+            // Clamp the zoom level between the min and max limits
+            newScale = Math.Max(_minZoom, Math.Min(_maxZoom, newScale));
 
-                // Adjust the scroll offset to keep the image centered during zoom
-                var mousePosition = e.GetPosition(MapScrollViewer);
-                double scrollHorizontalOffset = (mousePosition.X + MapScrollViewer.HorizontalOffset) * (newScale / scaleTransform.ScaleX);
-                double scrollVerticalOffset = (mousePosition.Y + MapScrollViewer.VerticalOffset) * (newScale / scaleTransform.ScaleY);
+            // Apply the new scale to both ScaleX and ScaleY
+            scaleTransform.ScaleX = newScale;
+            scaleTransform.ScaleY = newScale;
 
-                // Update scroll viewer's offset after zooming
-                MapScrollViewer.ScrollToHorizontalOffset(scrollHorizontalOffset - mousePosition.X);
-                MapScrollViewer.ScrollToVerticalOffset(scrollVerticalOffset - mousePosition.Y);
-            }
+            // Adjust the scroll offset to keep the image centered during zoom
+            var mousePosition = e.GetPosition(MapScrollViewer);
+            double scrollHorizontalOffset = (mousePosition.X + MapScrollViewer.HorizontalOffset) * (newScale / scaleTransform.ScaleX);
+            double scrollVerticalOffset = (mousePosition.Y + MapScrollViewer.VerticalOffset) * (newScale / scaleTransform.ScaleY);
+
+            // Update scroll viewer's offset after zooming
+            MapScrollViewer.ScrollToHorizontalOffset(scrollHorizontalOffset - mousePosition.X);
+            MapScrollViewer.ScrollToVerticalOffset(scrollVerticalOffset - mousePosition.Y);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace xCubeApplication.Helpers
 {
-    public class BaseViewModel
+    public class BaseViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         /// <summary>

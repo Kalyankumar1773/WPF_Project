@@ -5,6 +5,7 @@ namespace xCubeApplication.Interfaces
     public interface IUserRepositoryService
     {
         Task<IEnumerable<UserDetails>> GetAllUsersAsync();
+        Task<UserDetails> GetUserByNameAsync(string Name);
         Task<UserDetails> GetUserByIdAsync(int id);
         Task AddUserAsync(UserDetails user);
         Task UpdateUserAsync(UserDetails user);

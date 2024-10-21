@@ -20,7 +20,7 @@ namespace xCubeApplication.ClientDAL
         // Configuring connection string
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=YOUR_SERVER_NAME;Database=YourDatabaseName;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost;Database=TestingDB;Trusted_Connection=True;");
         }
     }
 }

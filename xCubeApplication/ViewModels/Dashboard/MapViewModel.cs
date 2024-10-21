@@ -74,7 +74,63 @@ namespace xCubeApplication.ViewModels.Dashboard
         {
             get
             {
-                return _mouseWheelCommand ?? (_mouseWheelCommand = new RelayCommand((o) =>
+                return _mouseWheelCommand ?? (_mouseWheelCommand = new RelayCommand<MouseWheelEventArgs>((o) =>
+                {
+                    try
+                    {
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }, (o) => { return true; }));
+            }
+        }
+
+        public ICommand _mouseLeftButtonDownCommand;
+        public ICommand MouseLeftButtonDownCommand
+        {
+            get
+            {
+                return _mouseLeftButtonDownCommand ?? (_mouseLeftButtonDownCommand = new RelayCommand<MouseButtonEventArgs>((o) =>
+                {
+                    try
+                    {
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }, (o) => { return true; }));
+            }
+        }
+
+        public ICommand _mouseMoveCommand;
+        public ICommand MouseMoveCommand
+        {
+            get
+            {
+                return _mouseMoveCommand ?? (_mouseMoveCommand = new RelayCommand<MouseEventArgs>((o) =>
+                {
+                    try
+                    {
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }, (o) => { return true; }));
+            }
+        }
+        public ICommand _mouseLeftButtonUpCommand;
+        public ICommand MouseLeftButtonUpCommand
+        {
+            get
+            {
+                return _mouseLeftButtonUpCommand ?? (_mouseLeftButtonUpCommand = new RelayCommand<MouseButtonEventArgs>((o) =>
                 {
                     try
                     {

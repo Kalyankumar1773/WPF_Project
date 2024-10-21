@@ -26,7 +26,7 @@
                 <!-- Name -->
                 <StackPanel>
                     <TextBlock Text="Name" Margin="5" FontWeight="Bold" FontSize="12" Foreground="#FF0F4E7A"/>
-                    <TextBox Text="{Binding Name}" Margin="5" Height="35" Padding="10"/>
+                    <TextBox Text="{Binding Name}" Margin="5" Height="35" Padding="7"/>
                 </StackPanel>
 
                 <!-- Age -->

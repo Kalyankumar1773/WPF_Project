@@ -28,7 +28,7 @@ namespace xCubeApplication
         //{
         //    // Register DbContext
         //    services.AddDbContext<ApplicationDbContext>(options =>
-        //        options.UseSqlServer("YourConnectionString"));
+        //        options.UseSqlServer(@"Server=localhost;Database=TestingDB;Trusted_Connection=True;"));
 
         //    // Register repositories and Unit of Work
         //    services.AddScoped<IUserRepositoryService, UserRepositoryService>();
