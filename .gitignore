@@ -25,3 +25,14 @@
 *.cs
 *.json
 *.cache
+*.baml
+/xCubeApplication/obj/Debug/net8.0-windows/App.g.cs
+/xCubeApplication/obj/Debug/net8.0-windows/App.g.i.cs
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication_MarkupCompile.cache
+*.targets
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication_MarkupCompile.lref
+*.props
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication_MarkupCompile.i.cache
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication_MarkupCompile.i.lref
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.csproj.CoreCompileInputs.cache
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.csproj.FileListAbsolute.txt

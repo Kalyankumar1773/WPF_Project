@@ -1,22 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+
+using Microsoft.EntityFrameworkCore;
 using xCubeApplication.ClientDAL;
-using xCubeApplication.Interfaces;
 using xCubeApplication.Models;
 
 namespace xCubeApplication.Services
 {
-    public class UserRepositoryService :IUserRepositoryService
+    public class UserRepositoryService : IUserRepositoryService
     {
         private readonly ApplicationDbContext _context;
         public UserRepositoryService()
         {
-            
+            _context = new ApplicationDbContext();
         }
         public UserRepositoryService(ApplicationDbContext context)
         {
