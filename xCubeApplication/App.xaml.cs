@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Configuration;
 using System.Windows;
 using xCubeApplication.ClientDAL;
 using xCubeApplication.Services;
@@ -23,9 +24,30 @@ namespace xCubeApplication
 
         private void ConfigureServices(ServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(@"Server=SV37\SQLEXPRESS;Database=TestingDB;Trusted_Connection=True;")
+            string constr = string.Empty;
+            try
+            {
+                if (ConfigurationManager.AppSettings["dbConnection"] != null)
+                    constr = ConfigurationManager.AppSettings["dbConnection"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            if (constr != string.Empty) 
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(constr)
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            }
+            else
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(@"Server=SV37\\SQLEXPRESS;Database=TestingDB;Trusted_Connection=True;")
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
+            }
 
             services.AddSingleton<IUserRepositoryService, UserRepositoryService>();
             services.AddSingleton<DashboardViewModel>();

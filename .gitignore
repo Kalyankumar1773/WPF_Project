@@ -37,3 +37,11 @@
 /xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.csproj.CoreCompileInputs.cache
 /xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.csproj.FileListAbsolute.txt
 /xCubeApplication/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs
+*.dll
+/xCubeApplication/bin/Debug/net8.0-windows/xCubeApplication.deps.json
+/xCubeApplication/bin/Debug/net8.0-windows/xCubeApplication.dll.config
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.assets.cache
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.designer.deps.json
+/xCubeApplication/obj/project.assets.json
+/xCubeApplication/obj/project.nuget.cache
+/xCubeApplication/obj/xCubeApplication.csproj.nuget.dgspec.json
