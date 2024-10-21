@@ -31,8 +31,8 @@ namespace xCubeApplication.ViewModels.Dashboard
         {
             Users = new ObservableCollection<UserDetails>
          {
-             new UserDetails { Name = "John Doe", Age = "30", DateOfBirth = "1994-5-15", ContactNumber = "1234567890" },
-             new UserDetails { Name = "Jane Smith", Age = "25", DateOfBirth = "1999-5-15", ContactNumber = "0987654321" }
+             //new UserDetails { Name = "John Doe", Age = "30", DateOfBirth = "1994-5-15", ContactNumber = "1234567890",ProfileImagePath="C:\\Users\\ajays\\OneDrive\\画像\\Screenshots\\Screenshot 2024-07-31 220837.png" },
+             //new UserDetails { Name = "Jane Smith", Age = "25", DateOfBirth = "1999-5-15", ContactNumber = "0987654321",ProfileImagePath="C:\\Users\\ajays\\OneDrive\\画像\\Screenshots\\Screenshot 2024-07-09 203757.png" }
          };
         }
     }

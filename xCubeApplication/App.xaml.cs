@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.Configuration;
-using System.Data;
-using System.Windows;
-using xCubeApplication.ClientDAL;
-using xCubeApplication.Interfaces;
-using xCubeApplication.Services;
-using xCubeApplication.ViewModels.Dashboard;
+﻿using System.Windows;
 
 namespace xCubeApplication
 {
