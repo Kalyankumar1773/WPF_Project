@@ -10,10 +10,6 @@ namespace xCubeApplication.Helpers
     public class BaseViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
-        /// <summary>
-        /// Notifies objects registered to receive this event that a property value has changed.
-        /// </summary>
-        /// <param name="propertyName">The name of the property that was changed.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
             if (this.PropertyChanged != null)

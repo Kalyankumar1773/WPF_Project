@@ -9,7 +9,6 @@ namespace xCubeApplication.ViewModels.Dashboard
         private IUserRepositoryService _userRepositoryService;
         public DashboardViewModel()
         {
-            //_userRepositoryService = (IUserRepositoryService)provider.GetService(typeof(IUserRepositoryService));
             CurrentViewModel = new AllUsersViewModel();
         }
 

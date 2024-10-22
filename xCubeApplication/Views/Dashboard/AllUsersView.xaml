@@ -11,7 +11,6 @@
         <local1:AllUsersViewModel/>
     </UserControl.DataContext>
 
-    <!-- Main Container -->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -29,7 +28,6 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Stylish Title Bar -->
             <Border Grid.Row="0" Grid.Column="2"
         Background="#FF0F4E7A"
         CornerRadius="10"
@@ -43,7 +41,6 @@
                VerticalAlignment="Center"/>
             </Border>
 
-            <!-- Stylish Data Grid for Users -->
             <Border Grid.Row="1" Grid.ColumnSpan="2"
         Background="White"
         BorderBrush="#FF0F4E7A"
@@ -82,9 +79,7 @@
         </Grid>
     </Grid>
 
-    <!-- Resource Dictionary for Stylish Effects -->
     <UserControl.Resources>
-        <!-- Shadow effect for stylish appearance -->
         <DropShadowEffect x:Key="ShadowEffect"
                       Color="Black"
                       BlurRadius="10"

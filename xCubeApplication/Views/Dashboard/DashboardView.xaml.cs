@@ -5,9 +5,6 @@ using System.Windows.Threading;
 
 namespace xCubeApplication.Views.Dashboard
 {
-    /// <summary>
-    /// Interaction logic for DashboardView.xaml
-    /// </summary>
     public partial class DashboardView : UserControl
     {
         DispatcherTimer timer;

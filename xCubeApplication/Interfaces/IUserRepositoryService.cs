@@ -7,7 +7,7 @@ namespace xCubeApplication.Interfaces
         List<UserDetails> GetAllUserDetails();
         bool AddUser(UserDetails user);
         bool UpdateUser(UserDetails user);
-        UserDetails GetUserDetails(string name);
+        bool GetUserDetails(string name);
         Task<IEnumerable<UserDetails>> GetAllUsersAsync();
         Task<UserDetails> GetUserByNameAsync(string Name);
         Task<UserDetails> GetUserByIdAsync(int id);

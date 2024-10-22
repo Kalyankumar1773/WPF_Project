@@ -20,7 +20,6 @@ namespace xCubeApplication.ViewModels.Dashboard
 
         public AddUserViewModel()
         {
-            // _userRepositoryService = userRepositoryService;
             _userRepositoryService = new UserRepositoryService();
         }
 
@@ -173,26 +172,10 @@ namespace xCubeApplication.ViewModels.Dashboard
 
             try
             {
-                //Check if the user exists
-                if (existingUser is  null)
+                if (existingUser == true)
                 {
-                    // Update the existing user
-                    existingUser.Name = Name;
-                    existingUser.Age = Age;
-                    existingUser.DateOfBirth = DateOfBirth;
-                    existingUser.ProfileImagePath = ProfilePicturePath;
-
-                    // Call the update method to save changes
-                    _userRepositoryService.UpdateUserAsync(existingUser);
-
-                    MessageBox.Show("User details updated successfully.");
-                }
-                else
-                {
-                    // Create a new user record if no existing user was found
-                    var newUser = new UserDetails
+                    var existingUserData = new UserDetails
                     {
-                        //ID = Guid.NewGuid().ToString(),  // Generating a new unique ID
                         Name = Name,
                         Age = Age,
                         ContactNumber = ContactNumber,
@@ -200,9 +183,21 @@ namespace xCubeApplication.ViewModels.Dashboard
                         ProfileImagePath = ProfilePicturePath
                     };
 
-                    // Add the new user to the database
-                     _userRepositoryService.AddUser(newUser);
+                    _userRepositoryService.UpdateUser(existingUserData);
 
+                    MessageBox.Show("User details updated successfully.");
+                }
+                else
+                {
+                    var newUser = new UserDetails
+                    {
+                        Name = Name,
+                        Age = Age,
+                        ContactNumber = ContactNumber,
+                        DateOfBirth = DateOfBirth,
+                        ProfileImagePath = ProfilePicturePath
+                    };
+                     _userRepositoryService.AddUser(newUser);
                     MessageBox.Show("User added successfully.");
                 }
             }
@@ -210,7 +205,22 @@ namespace xCubeApplication.ViewModels.Dashboard
             {
 
             }
+            finally
+            {
+                ResetProperties();
+            }
         }
+
+        public void ResetProperties()
+        {
+            Name = string.Empty;
+            Age = string.Empty;
+            ContactNumber = string.Empty;
+            DateOfBirth = string.Empty;
+            ProfilePicturePath = string.Empty;
+            ProfilePicture = null;
+        }
+
         private void UploadPicture()
         {
             var openFileDialog = new OpenFileDialog
@@ -221,7 +231,6 @@ namespace xCubeApplication.ViewModels.Dashboard
 
             if (openFileDialog.ShowDialog() == true)
             {
-                // Load the selected image
                 var filePath = openFileDialog.FileName;
                 ProfilePicturePath = filePath;
                 ProfilePicture = new BitmapImage(new Uri(filePath));

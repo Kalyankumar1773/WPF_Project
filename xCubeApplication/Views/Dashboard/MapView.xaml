@@ -14,13 +14,10 @@
     <TabControl>
         <TabItem Header="MapView" FontWeight="SemiBold" Foreground="#FF0F4E7A">
             <Grid>
-                <!-- ScrollViewer to enable panning on the map -->
-                <!-- ScrollViewer to enable panning on the map -->
-                <ScrollViewer x:Name="MapScrollViewer"
+                <ScrollViewer Padding="20" x:Name="MapScrollViewer"
                    HorizontalScrollBarVisibility="Visible"
                    VerticalScrollBarVisibility="Visible">
                     <Grid>
-                        <!-- Map Image with zoom support and pan functionality -->
                         <Image Source="/Images/mapView.png" Cursor="Hand"
                     Stretch="Uniform"
                     RenderTransformOrigin="0.5, 0.5"
@@ -35,13 +32,11 @@
                     </Grid>
                 </ScrollViewer>
 
-                <!-- Stylish Zoom Controls with Rounded Buttons -->
                 <StackPanel x:Name="ZoomControls"
                  HorizontalAlignment="Right"
                  VerticalAlignment="Top"
                  Orientation="Vertical"
                  Margin="10">
-                    <!-- Zoom In Button -->
                     <Button Content="+" 
                  Width="40" 
                  Height="40"
@@ -53,7 +48,6 @@
                  Margin="5"
                  Padding="5"/>
 
-                    <!-- Zoom Out Button -->
                     <Button Content="-" 
                  Width="40" 
                  Height="40"

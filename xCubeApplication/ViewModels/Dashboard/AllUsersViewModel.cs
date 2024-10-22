@@ -16,10 +16,8 @@ namespace xCubeApplication.ViewModels.Dashboard
     {
         private UserDetails _selectedUser;
         private IUserRepositoryService _userRepositoryService;
-        // Observable collection of users
         public ObservableCollection<UserDetails> Users { get; set; }
 
-        // Selected user from the list
         public UserDetails SelectedUser
         {
             get => _selectedUser;

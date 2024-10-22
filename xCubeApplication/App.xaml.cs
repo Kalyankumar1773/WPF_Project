@@ -9,9 +9,6 @@ using xCubeApplication.ViewModels.Dashboard;
 
 namespace xCubeApplication
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         private readonly ServiceProvider _serviceProvider;

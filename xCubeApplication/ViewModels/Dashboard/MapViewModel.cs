@@ -69,81 +69,7 @@ namespace xCubeApplication.ViewModels.Dashboard
                 }, (o) => { return true; }));
             }
         }
-        public ICommand _mouseWheelCommand;
-        public ICommand MouseWheelCommand
-        {
-            get
-            {
-                return _mouseWheelCommand ?? (_mouseWheelCommand = new RelayCommand<MouseWheelEventArgs>((o) =>
-                {
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                }, (o) => { return true; }));
-            }
-        }
-
-        public ICommand _mouseLeftButtonDownCommand;
-        public ICommand MouseLeftButtonDownCommand
-        {
-            get
-            {
-                return _mouseLeftButtonDownCommand ?? (_mouseLeftButtonDownCommand = new RelayCommand<MouseButtonEventArgs>((o) =>
-                {
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                }, (o) => { return true; }));
-            }
-        }
-
-        public ICommand _mouseMoveCommand;
-        public ICommand MouseMoveCommand
-        {
-            get
-            {
-                return _mouseMoveCommand ?? (_mouseMoveCommand = new RelayCommand<MouseEventArgs>((o) =>
-                {
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                }, (o) => { return true; }));
-            }
-        }
-        public ICommand _mouseLeftButtonUpCommand;
-        public ICommand MouseLeftButtonUpCommand
-        {
-            get
-            {
-                return _mouseLeftButtonUpCommand ?? (_mouseLeftButtonUpCommand = new RelayCommand<MouseButtonEventArgs>((o) =>
-                {
-                    try
-                    {
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                }, (o) => { return true; }));
-            }
-        }
-
+       
 
         private void ZoomIn()
         {
@@ -159,9 +85,9 @@ namespace xCubeApplication.ViewModels.Dashboard
 
         private void OnMouseWheel(MouseWheelEventArgs e)
         {
-            if (e.Delta > 0) // Zoom in
+            if (e.Delta > 0) 
                 ZoomIn();
-            else if (e.Delta < 0) // Zoom out
+            else if (e.Delta < 0) 
                 ZoomOut();
         }
     }

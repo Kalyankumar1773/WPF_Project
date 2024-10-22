@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace xCubeApplication.Views.Dashboard
 {
-    /// <summary>
-    /// Interaction logic for DetailsView.xaml
-    /// </summary>
     public partial class DetailsView : UserControl
     {
         public DetailsView()

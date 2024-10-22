@@ -6,9 +6,7 @@
              xmlns:local="clr-namespace:xCubeApplication.Views.Dashboard"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <!--<UserControl.DataContext>
-        <local1:DetailsViewModel/>
-    </UserControl.DataContext>-->
+
 
     <Grid Background="#F2F2F2">
         <Grid.RowDefinitions>
@@ -16,7 +14,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Header Section -->
         <TextBlock Foreground="#FF0F4E7A" 
                 Text="Details View" 
                 FontSize="24" 
@@ -25,7 +22,6 @@
                 VerticalAlignment="Center"
                 Grid.Row="0"/>
 
-        <!-- Main Details with Stylish Border -->
         <Border Grid.Row="1" 
              Background="#CFDEED" 
              CornerRadius="10" 
@@ -34,7 +30,6 @@
 
             <StackPanel>
 
-                <!-- Name Section -->
                 <WrapPanel Margin="0,10">
                     <TextBlock FontSize="16" 
                             Text="Name:" 
@@ -46,7 +41,6 @@
                             Foreground="#555"/>
                 </WrapPanel>
 
-                <!-- Age Section -->
                 <WrapPanel Margin="0,10">
                     <TextBlock FontSize="16" 
                             Text="Age:" 
@@ -58,7 +52,6 @@
                             Foreground="#555"/>
                 </WrapPanel>
 
-                <!-- Date of Birth Section -->
                 <WrapPanel Margin="0,10">
                     <TextBlock FontSize="16" 
                             Text="Date of Birth:" 
@@ -70,7 +63,6 @@
                             Foreground="#555"/>
                 </WrapPanel>
 
-                <!-- Contact Number Section -->
                 <WrapPanel Margin="0,10">
                     <TextBlock FontSize="16" 
                             Text="Contact Number:" 
@@ -82,7 +74,6 @@
                             Foreground="#555"/>
                 </WrapPanel>
 
-                <!-- Profile Picture Section -->
                 <StackPanel Margin="0,10">
                     <TextBlock FontSize="16" 
                             Text="Profile Picture:" 

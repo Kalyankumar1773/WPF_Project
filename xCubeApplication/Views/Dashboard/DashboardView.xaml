@@ -68,9 +68,6 @@
                     </DataTemplate>
                 </ContentControl.Resources>
             </ContentControl>
-            <!-- <Grid Grid.Column="2">
-                     <local:DetailsView DataContext="{Binding DetailsViewModel}" />  
-                 </Grid>-->
         </Grid>
     </Grid>
 </UserControl>

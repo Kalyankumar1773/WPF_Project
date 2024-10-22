@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace xCubeApplication.Views.Dashboard
 {
-    /// <summary>
-    /// Interaction logic for AllUsersView.xaml
-    /// </summary>
     public partial class AllUsersView : UserControl
     {
         public AllUsersView()
