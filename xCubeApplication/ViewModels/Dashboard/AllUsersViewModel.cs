@@ -6,14 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using xCubeApplication.Helpers;
+using xCubeApplication.Interfaces;
 using xCubeApplication.Models;
+using xCubeApplication.Services;
 
 namespace xCubeApplication.ViewModels.Dashboard
 {
     public class AllUsersViewModel : BaseViewModel
     {
         private UserDetails _selectedUser;
-
+        private IUserRepositoryService _userRepositoryService;
         // Observable collection of users
         public ObservableCollection<UserDetails> Users { get; set; }
 
@@ -29,11 +31,9 @@ namespace xCubeApplication.ViewModels.Dashboard
         }
         public AllUsersViewModel()
         {
-            Users = new ObservableCollection<UserDetails>
-         {
-             new UserDetails { Name = "John Doe", Age = "30", DateOfBirth = "1994-5-15", ContactNumber = "1234567890",ProfileImagePath="C:\\Users\\ajays\\OneDrive\\画像\\Screenshots\\Screenshot 2024-07-31 220837.png" },
-             new UserDetails { Name = "Jane Smith", Age = "25", DateOfBirth = "1999-5-15", ContactNumber = "0987654321",ProfileImagePath="C:\\Users\\ajays\\OneDrive\\画像\\Screenshots\\Screenshot 2024-07-09 203757.png" }
-         };
+            _userRepositoryService = new UserRepositoryService();
+            List<UserDetails> AllUsers = _userRepositoryService.GetAllUserDetails();
+            Users = new ObservableCollection<UserDetails>(AllUsers);
         }
     }
 }

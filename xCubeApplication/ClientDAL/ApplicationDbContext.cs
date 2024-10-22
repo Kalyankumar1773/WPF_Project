@@ -13,11 +13,6 @@ namespace xCubeApplication.ClientDAL
     {
         public DbSet<UserDetails> Users { get; set; }
 
-        public ApplicationDbContext()
-        {
-            
-        }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -29,37 +24,45 @@ namespace xCubeApplication.ClientDAL
         {
             modelBuilder.Entity<UserDetails>(b =>
             {
-                b.Property(e=>e.ID).HasColumnName("ID")
-                    .HasColumnType("nvarchar(450)");
+                b.Property(e => e.ID)
+                    .HasColumnName("ID")
+                    .HasColumnType("int")  // Changed to int if you're using integer for ID
+                    .ValueGeneratedOnAdd(); // Ensures the ID is generated on add
 
-                b.Property(e=>e.Age).HasColumnName("Age")
+                b.Property(e => e.Age)
+                    .HasColumnName("Age")
                     .IsRequired()
-                    .HasMaxLength(10)
-                    .HasColumnType("nvarchar(10)");
+                    .HasColumnType("int"); // Changed to int for age, as it should be numeric
 
-                b.Property(e=>e.ContactNumber).HasColumnName("ContactNumber")
+                b.Property(e => e.ContactNumber)
+                    .HasColumnName("ContactNumber")
                     .IsRequired()
-                    .HasMaxLength(10)
-                    .HasColumnType("nvarchar(10)");
+                    .HasMaxLength(15) // Adjusted max length to 15 to accommodate different formats
+                    .HasColumnType("nvarchar(15)"); // Kept nvarchar for contact numbers
 
-                b.Property(e=>e.DateOfBirth).HasColumnName("DateOfBirth")
+                b.Property(e => e.DateOfBirth)
+                    .HasColumnName("DateOfBirth")
                     .IsRequired()
-                    .HasColumnType("nvarchar(max)");
+                    .HasColumnType("date"); // Use date type for DateOfBirth instead of nvarchar
 
-                b.Property(e=>e.Name).HasColumnName("Name")
+                b.Property(e => e.Name)
+                    .HasColumnName("Name")
                     .IsRequired()
                     .HasMaxLength(100)
                     .HasColumnType("nvarchar(100)");
 
-                b.Property(e=>e.ProfileImagePath).HasColumnName("ProfileImagePath")
-                    .HasColumnType("nvarchar(max)");
+                b.Property(e => e.ProfileImagePath)
+                    .HasColumnName("ProfileImagePath")
+                    .HasColumnType("nvarchar(max)"); // Keep as nvarchar(max) for file paths
 
-                b.HasKey("ID");
+                b.HasKey(e => e.ID); // Ensures ID is the primary key
 
                 b.ToTable("Users");
             });
+
             base.OnModelCreating(modelBuilder);
         }
+
 
         // Configuring connection string
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

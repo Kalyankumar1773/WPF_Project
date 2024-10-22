@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using System.Windows;
 using xCubeApplication.ClientDAL;
+using xCubeApplication.Interfaces;
 using xCubeApplication.Services;
 using xCubeApplication.ViewModels.Dashboard;
 
@@ -44,7 +45,7 @@ namespace xCubeApplication
             else
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(@"Server=SV37\\SQLEXPRESS;Database=TestingDB;Trusted_Connection=True;")
+                options.UseSqlServer(@"Server=DESKTOP-PUOF93T\SQLEXPRESS;Database=TestingDB;Trusted_Connection=True;")
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
             }

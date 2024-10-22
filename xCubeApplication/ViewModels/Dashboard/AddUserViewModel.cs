@@ -16,10 +16,11 @@ namespace xCubeApplication.ViewModels.Dashboard
 {
     public class AddUserViewModel : BaseViewModel
     {
-        private UserRepositoryService _userRepositoryService;
+        private IUserRepositoryService _userRepositoryService;
 
         public AddUserViewModel()
         {
+            // _userRepositoryService = userRepositoryService;
             _userRepositoryService = new UserRepositoryService();
         }
 
@@ -166,14 +167,14 @@ namespace xCubeApplication.ViewModels.Dashboard
             }
         }
 
-        public async void SaveUser()
+        public  void SaveUser()
         {
-            var existingUser = await _userRepositoryService.GetUserByNameAsync(Name);
+            var existingUser =  _userRepositoryService.GetUserDetails(Name);
 
             try
             {
-                // Check if the user exists
-                if (existingUser != null)
+                //Check if the user exists
+                if (existingUser is  null)
                 {
                     // Update the existing user
                     existingUser.Name = Name;
@@ -182,7 +183,7 @@ namespace xCubeApplication.ViewModels.Dashboard
                     existingUser.ProfileImagePath = ProfilePicturePath;
 
                     // Call the update method to save changes
-                    await _userRepositoryService.UpdateUserAsync(existingUser);
+                    _userRepositoryService.UpdateUserAsync(existingUser);
 
                     MessageBox.Show("User details updated successfully.");
                 }
@@ -191,7 +192,7 @@ namespace xCubeApplication.ViewModels.Dashboard
                     // Create a new user record if no existing user was found
                     var newUser = new UserDetails
                     {
-                        ID = Guid.NewGuid().ToString(),  // Generating a new unique ID
+                        //ID = Guid.NewGuid().ToString(),  // Generating a new unique ID
                         Name = Name,
                         Age = Age,
                         ContactNumber = ContactNumber,
@@ -200,7 +201,7 @@ namespace xCubeApplication.ViewModels.Dashboard
                     };
 
                     // Add the new user to the database
-                    await _userRepositoryService.AddUserAsync(newUser);
+                     _userRepositoryService.AddUser(newUser);
 
                     MessageBox.Show("User added successfully.");
                 }

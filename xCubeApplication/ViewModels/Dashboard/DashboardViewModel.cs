@@ -1,12 +1,15 @@
 ﻿using System.Windows.Input;
 using xCubeApplication.Helpers;
+using xCubeApplication.Interfaces;
 
 namespace xCubeApplication.ViewModels.Dashboard
 {
     public class DashboardViewModel : BaseViewModel
     {
+        private IUserRepositoryService _userRepositoryService;
         public DashboardViewModel()
         {
+            //_userRepositoryService = (IUserRepositoryService)provider.GetService(typeof(IUserRepositoryService));
             CurrentViewModel = new AllUsersViewModel();
         }
 
