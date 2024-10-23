@@ -45,3 +45,6 @@
 /xCubeApplication/obj/project.assets.json
 /xCubeApplication/obj/project.nuget.cache
 /xCubeApplication/obj/xCubeApplication.csproj.nuget.dgspec.json
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.csproj.AssemblyReference.cache
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.GeneratedMSBuildEditorConfig.editorconfig
+/xCubeApplication/obj/Debug/net8.0-windows/xCubeApplication.genruntimeconfig.cache
